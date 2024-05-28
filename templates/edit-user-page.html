@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование пользователя</title>
+</head>
+<body>
+    <h1>Редактирование пользователя</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ f.first_name.data }}" required><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ f.last_name.data }}" required><br>
+
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username" value="{{ f.username.data }}" required><br>
+
+
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>

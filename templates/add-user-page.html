@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить пользователя</title>
+</head>
+<body>
+    <h1>Добавить пользователя</h1>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="/add-user">
+        {{ f.csrf_token }}
+        <div>
+            {{ f.first_name.label }} {{ f.first_name }}
+        </div>
+        <div>
+            {{ f.last_name.label }} {{ f.last_name }}
+        </div>
+        <div>
+            {{ f.username.label }} {{ f.username }}
+        </div>
+        <div>
+            {{ f.password.label }} {{ f.password }}
+        </div>
+        <div>
+            {{ f.confirm_password.label }} {{ f.confirm_password }}
+        </div>
+        <div>
+            <button type="submit">Добавить пользователя</button>
+        </div>
+    </form>
+</body>
+</html>
